@@ -26,7 +26,7 @@ Kk●●●●●●●●Kk
 
 　　・栄さんから頂いたデータベース情報を、コマンドプロンプト（MySQL 8.0 Command Line Client）側から入力で読み込み。
 
-　　・あとは自分で練習（SQL全般操作可能）
+　　・weakがついたらﾊﾟｽﾜｰﾄﾞを複雑にする。
 
 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 MySqlインストール方法
@@ -36,10 +36,6 @@ installerをインストールして、MySqlコミュニティ、(MySql　instal
 next、ｴｸｽｷｭｰﾄ、next、next、next、next、パスワード入力、next、next、ｴｸｽｷｭｰﾄ、finish、next、パスワード入力してcheck、finish、コピーログtoクリップモードで作業内容コピーして複製保存、workベンチ罰閉じ、次も✕閉じ、表示されたコマンドプロンプト(MySQL 8.0 Command Line Client)に円マーク+quit、これでinstall終了。
 
 
-
-②勉強課題内容を指定頂いた
-
-⑤weakがついたらﾊﾟｽﾜｰﾄﾞを複雑にする。
 
 
 
