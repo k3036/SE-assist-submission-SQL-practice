@@ -1,9 +1,9 @@
+
+
 　　　　　　　　　　　　　　　　　　　　★　コマンドプロンプトでのデータベース作成及び、[.sql]ファイルの読込み　★
 
 
 ★ [　【MySQL】sqlをファイルをから実行（source）　]　➡　https://qiita.com/oden141/items/4feccb372d9de868ee1e
-
-
 
 
 ①　create database worldcup2014;
@@ -31,10 +31,403 @@
 　　　基本的には、（character_set_filesystem, character_sets_dir以外）を全部 utf-8 にすればok。
           これで、文字化け解消。
 
-⑨
+
+ここまでで、外部ファイルのDBの読込み完了。
 
 
-⑩
+
+
+
+
+
+
+
+
+
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+
+Kk●●●●●●●●Kk
+C:\xampp\htdocs\５：DB\課題５.worldcup.sql\02_DB蝓ｺ遉・worldcup.sql
+ーーーーーーーーーーーーーーーーーーー
+
+★コマンドプロンプトから[.sql]のデータベースを読込む
+source 絶対パス ;
+mysql> source C:\xampp\htdocs\５：DB\課題５.worldcup.sql\02_DB蝓ｺ遉・worldcup.sql
+
+ーーーーーーーーーーーーーーーーーーー
+mysql> show tables;
+
++---------------------+
+| Tables_in_sample0db |
++---------------------+
+| countries           |
+| goals               |
+| goals_tmp           |
+| pairings            |
+| pairings_tmp        |
+| players             |
+| players_tmp         |
+| test_tbl            |
++---------------------+
+
+mysql> source C:\xampp\htdocs\５：DB\課題５.worldcup.sql\02_DB蝓ｺ遉・worldcup.sql
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+Query OK, 32 rows affected (0.01 sec)
+Records: 32  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 188 rows affected (0.00 sec)
+Records: 188  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 171 rows affected (0.00 sec)
+Records: 171  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 144 rows affected (0.00 sec)
+Records: 144  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 144 rows affected (0.00 sec)
+Records: 144  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 6 warnings (0.01 sec)
+
+Query OK, 736 rows affected (0.01 sec)
+Records: 736  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 736 rows affected (0.01 sec)
+Records: 736  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 32 rows affected, 1 warning (0.02 sec)
+Records: 32  Duplicates: 0  Warnings: 1
+
+Query OK, 188 rows affected, 1 warning (0.02 sec)
+Records: 188  Duplicates: 0  Warnings: 1
+
+Query OK, 144 rows affected, 1 warning (0.02 sec)
+Records: 144  Duplicates: 0  Warnings: 1
+
+Query OK, 736 rows affected, 1 warning (0.03 sec)
+Records: 736  Duplicates: 0  Warnings: 1
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+
+
+source #{ファイルパス}/ファイル名.sql
+
+source #{worldcup.sql}/worldcup.sql
+
+
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・mysql> create database sample0db;  (データベースsample0dbを作成)
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・mysql>show databases;でデータベース一覧が見れる。
+
+ーーーーーーーーーーーーーーーーーーー　
+
+　　・use databases名;　でデータベースの指定を変える
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・show tablesq;　でテーブル内容確認
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・desc country;で、countryカラムの内容が表示される
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・select * 
+      from country;
+     で、countryカラムを表示
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・終了は必ず、　exit; で終了する　||　終了は必ず、　quit; で終了する。
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・ mysql> use  データベース名 ;
+      Database changed
+      使用データベースを変更
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・select database();
+     で、現行のデータベースを確認
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| sample0db  |
++------------+
+1 row in set (0.00 sec)
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・テーブル作成(id,char(50))
+    create table test_tbl(id int , name char(50));
+                     ↓
+mysql> create table test_tbl(id int , name char(50));
+Query OK, 0 rows affected (0.04 sec)
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・テーブル内容確認
+　　　show tables;
+
+mysql> show tables;
++---------------------+
+| Tables_in_sample0db |
++---------------------+
+| test_tbl            |
++---------------------+
+1 row in set (0.03 sec)
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・descで表形式でテーブル構造表示
+　　　desc test_tbl ;
+
+mysql> desc test_tbl ;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int      | YES  |     | NULL    |       |
+| name  | char(50) | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+
+
+
+
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+　　　　　　　　　　　★　SQLコマンドプロンプト(MySQL 8.0 Command Line Client)言語　★
+
+
+[C:\ProgramData\Microsoft\Windows\Start Menu\Programs\MySQL\MySQL Server 8.0]➡インストール後、コマンドプロンプト(MySQL 8.0 Command Line Client)の場所
+
+①    
+       パスワード入力でstartする
+
+② 
+　　・mysql>に、show databases;でデータベース一覧が見れる。
+
+　　・use databases名;　でデータベースの指定を変える
+
+　　・show tablesq;　でテーブル内容確認
+
+　　・desc country;で、countryカラムの内容が表示される
+
+　　・select * 
+      from country;
+     で、countryカラムを表示
+
+　　・終了は必ず、　exit; で終了する。
+
+　　・栄さんから頂いたデータベース情報を、コマンドプロンプト（MySQL 8.0 Command Line Client）側から入力で読み込み。
+
+　　・あとは自分で練習（SQL全般操作可能）
+
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+・[MySQLのダウンロードとインストール - Windows環境]　https://webkaru.net/mysql/install-windows/
+・[公式 - MySQLインストール - 公式]https://dev.mysql.com/
+・[公式 MySQL Community Downloads　]　https://dev.mysql.com/downloads/installer/
+
+
+MySqlインストール方法
+
+①MySql公式よりインストール方法。
+installerをインストールして、MySqlコミュニティ、(MySql　installer　for windows)を押して、ノーサンクスジャストstartマイダウンロードを押して、installerを入手し、基本的にnext　yes　ｴｸｽｷｭｰﾄでモーダルを進める。
+next、ｴｸｽｷｭｰﾄ、next、next、next、next、パスワード入力、next、next、ｴｸｽｷｭｰﾄ、finish、next、パスワード入力してcheck、finish、コピーログtoクリップモードで作業内容コピーして複製保存、workベンチ罰閉じ、次も✕閉じ、表示されたコマンドプロンプト(MySQL 8.0 Command Line Client)に円マーク+quit、これでinstall終了。
+
+
+
+
+
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+worldcup.sqlのコマンドプロンプト読み込み
+
+
+
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sample0db          |
+| sys                |
+| world              |
++--------------------+
+
+↓
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sample0db          |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+mysql> source C:\xampp\htdocs\５：DB\課題５.worldcup.sql\02_DB蝓ｺ遉・worldcup.sql
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+Query OK, 32 rows affected (0.01 sec)
+Records: 32  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 188 rows affected (0.00 sec)
+Records: 188  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 171 rows affected (0.00 sec)
+Records: 171  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 144 rows affected (0.00 sec)
+Records: 144  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 144 rows affected (0.00 sec)
+Records: 144  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 6 warnings (0.01 sec)
+
+Query OK, 736 rows affected (0.01 sec)
+Records: 736  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 736 rows affected (0.01 sec)
+Records: 736  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 32 rows affected, 1 warning (0.02 sec)
+Records: 32  Duplicates: 0  Warnings: 1
+
+Query OK, 188 rows affected, 1 warning (0.02 sec)
+Records: 188  Duplicates: 0  Warnings: 1
+
+Query OK, 144 rows affected, 1 warning (0.02 sec)
+Records: 144  Duplicates: 0  Warnings: 1
+
+Query OK, 736 rows affected, 1 warning (0.03 sec)
+Records: 736  Duplicates: 0  Warnings: 1
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
 
 
 
