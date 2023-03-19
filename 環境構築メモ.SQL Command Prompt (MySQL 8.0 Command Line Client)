@@ -1,7 +1,264 @@
+
+
+　　　　　　　　　　　　　　　　　　　　★　コマンドプロンプトでのデータベース作成及び、[.sql]ファイルの読込み　★
+
+
+★ [　【MySQL】sqlをファイルをから実行（source）　]　➡　https://qiita.com/oden141/items/4feccb372d9de868ee1e
+
+
+①　create database worldcup2014;
+     [worldcup2014]というデータベースを作成
+
+②　use worldcup2014;
+     作成した[worldcup2014]へ階層を移動
+
+③　source C:\xampp\htdocs\５：DB\課題５.worldcup.sql\02_DB蝓ｺ遉・worldcup.sql
+　　　[worldcup.sql]の絶対パスを利用して、[worldcup2014]DBに[worldcup.sql]を読込み
+
+④　show databases;
+     データベースを一覧確認
+
+➄   show tables;
+　　　テーブルを一覧確認
+
+⑥　select * from countries;
+　　　指定テーブルの全ての情報表示するも文字化け
+
+➆　show variables like "chara%";　を使って、DBの文字コード設定を確認。
+       show create database worldcup2014;　を使って、デフォルト文字コード確認　➡　[ utf8mb4 COLLATE utf8mb4_0900_ai_ci]と確認
+
+⑧　my.iniの[client]と[mysqld]の文字コードをutf8に書き換え　➡　https://qiita.com/YusukeHigaki/items/2cab311d2a559a543e3a
+　　　基本的には、（character_set_filesystem, character_sets_dir以外）を全部 utf-8 にすればok。
+          これで、文字化け解消。
+
+
+ここまでで、外部ファイルのDBの読込み完了。
+
+
+
+
+
+
+
+
+
+
+
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+
 Kk●●●●●●●●Kk
+C:\xampp\htdocs\５：DB\課題５.worldcup.sql\02_DB蝓ｺ遉・worldcup.sql
+ーーーーーーーーーーーーーーーーーーー
+
+★コマンドプロンプトから[.sql]のデータベースを読込む
+source 絶対パス ;
+mysql> source C:\xampp\htdocs\５：DB\課題５.worldcup.sql\02_DB蝓ｺ遉・worldcup.sql
+
+ーーーーーーーーーーーーーーーーーーー
+mysql> show tables;
+
++---------------------+
+| Tables_in_sample0db |
++---------------------+
+| countries           |
+| goals               |
+| goals_tmp           |
+| pairings            |
+| pairings_tmp        |
+| players             |
+| players_tmp         |
+| test_tbl            |
++---------------------+
+
+mysql> source C:\xampp\htdocs\５：DB\課題５.worldcup.sql\02_DB蝓ｺ遉・worldcup.sql
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+Query OK, 32 rows affected (0.01 sec)
+Records: 32  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 188 rows affected (0.00 sec)
+Records: 188  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 171 rows affected (0.00 sec)
+Records: 171  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 144 rows affected (0.00 sec)
+Records: 144  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 144 rows affected (0.00 sec)
+Records: 144  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 6 warnings (0.01 sec)
+
+Query OK, 736 rows affected (0.01 sec)
+Records: 736  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 736 rows affected (0.01 sec)
+Records: 736  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 32 rows affected, 1 warning (0.02 sec)
+Records: 32  Duplicates: 0  Warnings: 1
+
+Query OK, 188 rows affected, 1 warning (0.02 sec)
+Records: 188  Duplicates: 0  Warnings: 1
+
+Query OK, 144 rows affected, 1 warning (0.02 sec)
+Records: 144  Duplicates: 0  Warnings: 1
+
+Query OK, 736 rows affected, 1 warning (0.03 sec)
+Records: 736  Duplicates: 0  Warnings: 1
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
 
 
+
+source #{ファイルパス}/ファイル名.sql
+
+source #{worldcup.sql}/worldcup.sql
+
+
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・mysql> create database sample0db;  (データベースsample0dbを作成)
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・mysql>show databases;でデータベース一覧が見れる。
+
+ーーーーーーーーーーーーーーーーーーー　
+
+　　・use databases名;　でデータベースの指定を変える
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・show tablesq;　でテーブル内容確認
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・desc country;で、countryカラムの内容が表示される
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・select * 
+      from country;
+     で、countryカラムを表示
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・終了は必ず、　exit; で終了する　||　終了は必ず、　quit; で終了する。
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・ mysql> use  データベース名 ;
+      Database changed
+      使用データベースを変更
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・select database();
+     で、現行のデータベースを確認
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| sample0db  |
++------------+
+1 row in set (0.00 sec)
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・テーブル作成(id,char(50))
+    create table test_tbl(id int , name char(50));
+                     ↓
+mysql> create table test_tbl(id int , name char(50));
+Query OK, 0 rows affected (0.04 sec)
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・テーブル内容確認
+　　　show tables;
+
+mysql> show tables;
++---------------------+
+| Tables_in_sample0db |
++---------------------+
+| test_tbl            |
++---------------------+
+1 row in set (0.03 sec)
+
+ーーーーーーーーーーーーーーーーーーー
+
+　　・descで表形式でテーブル構造表示
+　　　desc test_tbl ;
+
+mysql> desc test_tbl ;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int      | YES  |     | NULL    |       |
+| name  | char(50) | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+
+
+
+
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 　　　　　　　　　　　★　SQLコマンドプロンプト(MySQL 8.0 Command Line Client)言語　★
 
 
@@ -47,21 +304,110 @@ next、ｴｸｽｷｭｰﾄ、next、next、next、next、パスワード入力
 
 
 
-　　　　　　　　　　　　　　　　　　[宿題]
 
-　ーーーーーーーーーーーーーーーーーーー
- 
-・WindowsではなくLinaxのOSでコマンドを使って操作する準備。
-・SQLの操作は、MYSQLアプリをインストールしてコマンドプロンプトに直書きする操作方法を使用。
-・[ネットワークエンジニア]及び[フロントエンド側とサーバーサイドの側の繋がりについて(PCとネットワークの繋がり)]について精査。
 
-　ーーーーーーーーーーーーーーーーーーー
- 
-・4月31日まで、栄さんから頂いたzipのDBをインストール後、SMSの指示だしに対してDBの作業を行わせて頂き、
-　完了後に [gyazo] を使ってスクショURLを栄さんに送らせて頂く。
-   これを繰り返して、実務経験とさせて頂き５月初旬から雇用及び現場職をスタートさせて頂く。
-   
-　ーーーーーーーーーーーーーーーーーーー
 
-  
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
+worldcup.sqlのコマンドプロンプト読み込み
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sample0db          |
+| sys                |
+| world              |
++--------------------+
+
+
+mysql> source C:\xampp\htdocs\５：DB\課題５.worldcup.sql\02_DB蝓ｺ遉・worldcup.sql
+Query OK, 0 rows affected (0.01 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+Query OK, 32 rows affected (0.01 sec)
+Records: 32  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 188 rows affected (0.00 sec)
+Records: 188  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 171 rows affected (0.00 sec)
+Records: 171  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 144 rows affected (0.00 sec)
+Records: 144  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 144 rows affected (0.00 sec)
+Records: 144  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 6 warnings (0.01 sec)
+
+Query OK, 736 rows affected (0.01 sec)
+Records: 736  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected, 4 warnings (0.01 sec)
+
+Query OK, 736 rows affected (0.01 sec)
+Records: 736  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 32 rows affected, 1 warning (0.02 sec)
+Records: 32  Duplicates: 0  Warnings: 1
+
+Query OK, 188 rows affected, 1 warning (0.02 sec)
+Records: 188  Duplicates: 0  Warnings: 1
+
+Query OK, 144 rows affected, 1 warning (0.02 sec)
+Records: 144  Duplicates: 0  Warnings: 1
+
+Query OK, 736 rows affected, 1 warning (0.03 sec)
+Records: 736  Duplicates: 0  Warnings: 1
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+
+
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+mysql> create database worldcup2014;
+Query OK, 1 row affected (0.00 sec)
