@@ -1,13 +1,14 @@
 Kk●●●●●●●●Kk
 
- ★　SQLコマンドプロンプト(MySQL 8.0 Command Line Client)言語　★
 
+
+　　　　　　　　　　　★　SQLコマンドプロンプト(MySQL 8.0 Command Line Client)言語　★
 
 
 [C:\ProgramData\Microsoft\Windows\Start Menu\Programs\MySQL\MySQL Server 8.0]➡インストール後、コマンドプロンプト(MySQL 8.0 Command Line Client)の場所
 
 ①    
-       パスワード入力でstart
+       パスワード入力でstartする
 
 ② 
 　　・mysql>に、show databases;でデータベース一覧が見れる。
@@ -26,16 +27,22 @@ Kk●●●●●●●●Kk
 
 　　・栄さんから頂いたデータベース情報を、コマンドプロンプト（MySQL 8.0 Command Line Client）側から入力で読み込み。
 
-　　・weakがついたらﾊﾟｽﾜｰﾄﾞを複雑にする。
+　　・あとは自分で練習（SQL全般操作可能）
+
+
 
 ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+・[MySQLのダウンロードとインストール - Windows環境]　https://webkaru.net/mysql/install-windows/
+・[公式 - MySQLインストール - 公式]https://dev.mysql.com/
+・[公式 MySQL Community Downloads　]　https://dev.mysql.com/downloads/installer/
+
+
 MySqlインストール方法
 
 ①MySql公式よりインストール方法。
 installerをインストールして、MySqlコミュニティ、(MySql　installer　for windows)を押して、ノーサンクスジャストstartマイダウンロードを押して、installerを入手し、基本的にnext　yes　ｴｸｽｷｭｰﾄでモーダルを進める。
 next、ｴｸｽｷｭｰﾄ、next、next、next、next、パスワード入力、next、next、ｴｸｽｷｭｰﾄ、finish、next、パスワード入力してcheck、finish、コピーログtoクリップモードで作業内容コピーして複製保存、workベンチ罰閉じ、次も✕閉じ、表示されたコマンドプロンプト(MySQL 8.0 Command Line Client)に円マーク+quit、これでinstall終了。
-
-
 
 
 
