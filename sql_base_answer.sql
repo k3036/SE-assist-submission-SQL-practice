@@ -2303,6 +2303,11 @@ from countries
 where 1=1
 and group_name <> 'C';
 
+SELECT *
+FROM `countries`
+WHERE group_name = 'C';
+
+
 id	name	ranking	group_name	
 1	ブラジル	3	A	
 2	メキシコ	20	A	
