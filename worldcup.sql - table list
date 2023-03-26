@@ -1,0 +1,66 @@
+・desc テーブル名;　で中身が見れる
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+mysql> show tables;　
++------------------------+
+| Tables_in_worldcup2014 |
++------------------------+
+| countries              |
+| goals                  |
+| goals_tmp              |
+| pairings               |
+| pairings_tmp           |
+| players                |
+| players_tmp            |
++------------------------+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+mysql> desc players;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | int         | NO   | PRI | NULL    | auto_increment |
+| country_id  | int         | YES  |     | NULL    |                |
+| uniform_num | int         | YES  |     | NULL    |                |
+| position    | varchar(2)  | YES  |     | NULL    |                |
+| name        | varchar(50) | YES  |     | NULL    |                |
+| club        | varchar(50) | YES  |     | NULL    |                |
+| birth       | date        | YES  |     | NULL    |                |
+| height      | int         | YES  |     | NULL    |                |
+| weight      | int         | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+mysql> desc countries;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int         | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(50) | YES  |     | NULL    |                |
+| ranking    | int         | YES  |     | NULL    |                |
+| group_name | varchar(1)  | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+mysql> desc players_tmp;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| country     | varchar(50) | YES  |     | NULL    |       |
+| uniform_num | int         | YES  |     | NULL    |       |
+| position    | varchar(2)  | YES  |     | NULL    |       |
+| name        | varchar(50) | YES  |     | NULL    |       |
+| club        | varchar(50) | YES  |     | NULL    |       |
+| birth       | date        | YES  |     | NULL    |       |
+| height      | int         | YES  |     | NULL    |       |
+| weight      | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
