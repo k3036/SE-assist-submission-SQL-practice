@@ -1,5 +1,45 @@
 JOIN学習メモ
 
+
+desc goals_tmp
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| my_country    | varchar(50) | YES  |     | NULL    |       |
+| enemy_country | varchar(50) | YES  |     | NULL    |       |
+| goal_time     | varchar(10) | YES  |     | NULL    |       |
+| player_name   | varchar(50) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
+desc players;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| id          | int         | NO   | PRI | NULL    | auto_increment |
+| country_id  | int         | YES  |     | NULL    |                |
+| uniform_num | int         | YES  |     | NULL    |                |
+| position    | varchar(2)  | YES  |     | NULL    |                |
+| name        | varchar(50) | YES  |     | NULL    |                |
+| club        | varchar(50) | YES  |     | NULL    |                |
+| birth       | date        | YES  |     | NULL    |                |
+| height      | int         | YES  |     | NULL    |                |
+| weight      | int         | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+
+desc countries;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int         | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(50) | YES  |     | NULL    |                |
+| ranking    | int         | YES  |     | NULL    |                |
+| group_name | varchar(1)  | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+
+
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
 mysql> SELECT co.name, pl.name, go.goal_time
     -> FROM goals go
     -> JOIN players pl ON go.player_id = pl.id
